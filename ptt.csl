@@ -360,7 +360,7 @@
           <label variable="locator" form="long" text-case="capitalize-first" suffix=" "/>
         </if>
         <else-if locator="page">
-          <label value=""/>
+          <text value=""/>
         </else-if>
         <else>
           <label variable="locator" form="short" suffix=" "/>
