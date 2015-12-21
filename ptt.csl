@@ -400,6 +400,12 @@
           </group>
           <text variable="publisher-place" prefix=", "/>
       </else-if>
+      <else-if type="book chapter" match="any">
+        <group delimiter=" ">
+	        <text variable="collection-title"/>
+          <text variable="collection-number"/>
+          </group>
+      </else-if>
       <else-if type="bill legal_case legislation" match="none">
         <text variable="container-title"/>
       </else-if>
