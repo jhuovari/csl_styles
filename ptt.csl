@@ -387,10 +387,7 @@
   </macro>
   <macro name="container-title">
     <choose>
-      <if type="article article-journal article-magazine article-newspaper" match="any">
-        <text variable="container-title" text-case="title"/>
-      </if>
-      <else-if type="report" match="any">
+      <if type="report" match="any">
         <text variable="container-title" text-case="title"/>
           <group delimiter=" ">
 	          <text variable="publisher"/>
@@ -399,16 +396,18 @@
             <text variable="number"/>
           </group>
           <text variable="publisher-place" prefix=", "/>
-      </else-if>
+      </if>
       <else-if type="book chapter" match="any">
         <group delimiter=" ">
 	        <text variable="collection-title"/>
           <text variable="collection-number"/>
           </group>
       </else-if>
-      <else-if type="bill legal_case legislation" match="none">
+    </choose>
+    <choose>
+      <if type="bill legal_case legislation" match="none">
         <text variable="container-title"/>
-      </else-if>
+      </if>
     </choose>
   </macro>
   <macro name="legal-cites">
