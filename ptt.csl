@@ -406,9 +406,11 @@
           <text variable="collection-number"/>
           </group>
       </else-if>
-      <else-if type="bill legal_case legislation" match="none">
+    </choose>
+    <choose>
+      <if type="bill legal_case legislation" match="none">
         <text variable="container-title"/>
-      </else-if>
+      </if>
     </choose>
   </macro>
   <macro name="legal-cites">
